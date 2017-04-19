@@ -1,4 +1,14 @@
 won () {
+    if [ "$1" = "" ]
+    then
+        deactivate
+        unset PRODIR
+        echo "]0;"
+        PS1="\w >>"
+        cd
+        return
+    fi
+
     DEVDIR=${DEVDIR:-/projects}
     export PROJECT=$1
     if ! [ -d $DEVDIR/$PROJECT ]
@@ -8,6 +18,9 @@ won () {
     fi
 
     export PRODIR=$DEVDIR/$PROJECT
+    echo "]0;$1"
+    PS1="[$1] $PS1"
+
     cd $PRODIR
 
     if [ -d $PRODIR/venv ]

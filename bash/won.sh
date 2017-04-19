@@ -1,4 +1,3 @@
-set -x
 won () {
     DEVDIR=${DEVDIR:-/projects}
     export PROJECT=$1

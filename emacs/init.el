@@ -1,6 +1,7 @@
 ;;WONFIG emacs
 ;;; Code:
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'load-path "~/.emacs.d/elpa/")
 (require 'package)
 (add-to-list 'package-archives
        '("melpa" . "http://melpa.org/packages/") t)
@@ -43,6 +44,7 @@
 (autoload 'jedi:setup "jedi" nil t)
 (add-hook 'python-mode-hook 'jedi:setup)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+(setq jedi:complete-on-dot t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

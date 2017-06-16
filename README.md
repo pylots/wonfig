@@ -2,6 +2,6 @@
 Default config for tools
 
 # Install
-Checkout wonfig somewhere, could be $HOME
-run bash install.sh
-You are (hopefully) done
+1. Checkout wonfig somewhere, could be $HOME
+2. run bash install.sh
+3. You are (hopefully) done

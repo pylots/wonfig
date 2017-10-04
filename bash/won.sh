@@ -19,7 +19,6 @@ won () {
 
     export PRODIR=$DEVDIR/$PROJECT
     echo "]0;$1"
-    PS1="[$1] $PS1"
 
     cd $PRODIR
 
@@ -32,6 +31,8 @@ won () {
     then
         source $PRODIR/.proenv
     fi
+
+    PS1="[$PROJECT:$ENV] $PS1"
 
     if [ -f $PRODIR/.profun ]
     then

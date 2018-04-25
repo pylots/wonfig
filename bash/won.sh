@@ -32,7 +32,9 @@ won () {
         source $PRODIR/.proenv
     fi
 
-    PS1="[$PROJECT:$ENV] $PS1"
+    blue=$(tput setaf 4)
+    reset=$(tput sgr0)
+    PS1="\[$reset\]\[$blue\][$PROJECT:$ENV] $PS1\[$reset\]"
 
     if [ -f $PRODIR/.profun ]
     then

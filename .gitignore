@@ -3,3 +3,5 @@ emacs/backups
 emacs/elpa
 emacs/ido.last
 emacs/snippets
+emacs/.python-environments
+emacs/ac-comphist.dat

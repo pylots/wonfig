@@ -1,3 +1,7 @@
+e () {
+    emacs -nw $*
+}
+
 won () {
     if [ "$1" = "" ]
     then
@@ -9,7 +13,7 @@ won () {
         return
     fi
 
-    DEVDIR=${DEVDIR:-/projects}
+    DEVDIR=${DEVDIR:-~/projects}
     export PROJECT=$1
     if ! [ -d $DEVDIR/$PROJECT ]
     then

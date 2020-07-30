@@ -24,6 +24,7 @@ won () {
     export PRODIR=$DEVDIR/$PROJECT
     echo "]0;$1"
 
+    echo "PRODIR=$PRODIR"
     cd $PRODIR
 
     if [ -d $PRODIR/venv ]

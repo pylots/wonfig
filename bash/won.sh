@@ -2,6 +2,8 @@ e () {
     emacs -nw $*
 }
 
+export PROMPT_DIRTRIM=2
+export PS1="\w >>"
 won () {
     if [ "$1" = "" ]
     then
@@ -39,7 +41,7 @@ won () {
 
     blue=$(tput setaf 4)
     reset=$(tput sgr0)
-    PS1="\[$reset\]\[$blue\][$PROJECT:$ENV] $PS1\[$reset\]"
+    PS1="\[$reset\]$PS1\[$reset\]"
 
     if [ -f $PRODIR/.profun ]
     then

@@ -23,6 +23,7 @@
     blacken                         ;; Black formatting on save
     magit                           ;; Git integration
     ponylang-mode
+    solarized-theme
     )
   )
 
@@ -37,22 +38,45 @@
 ;; Basic Customization
 ;; ====================================
 
+(load-theme 'solarized-light t)
 (setq inhibit-startup-message t)  ;; Hide the startup message
 (setq dired-use-ls-dired nil)
 (add-hook 'elpy-mode-hook (lambda () (highlight-indentation-mode -1)))
+(menu-bar-mode 0)
+(when (display-graphic-p)
+  (tool-bar-mode 0)
+  (scroll-bar-mode 0))
+(setq inhibit-startup-screen t)
+(column-number-mode)
 ; (global-linum-mode t)             ;; Enable line numbers globally
 (set-frame-font "monaco")
 (tool-bar-mode -1)
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq show-paren-delay 0)
+(show-paren-mode)
+(setq create-lockfiles nil)
 (setq abbrev-file-name "~/.emacs.d/abbrev_defs")
 (add-to-list 'default-frame-alist '(height . 42))
 (add-to-list 'default-frame-alist '(width . 120))
 (setq grep-command "grep -rni ")
 
+;; Interactively do things.
+(ido-mode 1)
+(ido-everywhere)
+(setq ido-enable-flex-matching t)
+(fido-mode)
+
+;; Show stray whitespace.
+(setq-default show-trailing-whitespace t)
+(setq-default indicate-empty-lines t)
+(setq-default indicate-buffer-boundaries 'left)
+
 ;; ====================================
 ;; DEVELOPMENT SETUP
 ;; ====================================
 ;; Enable elpy
+(setq elpy-rpc-python-command "python3")
 (elpy-enable)
 
 ;; Use IPython for REPL
@@ -78,8 +102,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (ponylang-mode ## magit blacken ein skewer-mode request python-mode py-autopep8 projectile polymode markdown-mode jedi flycheck elpy better-defaults))))
+   '(ponylang-mode ## magit blacken ein skewer-mode request python-mode py-autopep8 projectile polymode markdown-mode jedi flycheck elpy better-defaults)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

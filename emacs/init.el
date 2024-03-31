@@ -24,6 +24,17 @@
     magit                           ;; Git integration
     )
   )
+(setq backup-by-copying t)
+(make-directory "~/.emacs.d/backups/" t)
+(make-directory "~/.emacs.d/autosave/" t)
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosave/" t)))
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups/")))
+(setq sentence-end-double-space nil)
+(setq require-final-newline t)
+(setq dtrt-indent-global-mode t)
+(setq frame-inhibit-implied-resize t)
+(setq pixel-scroll-precision-mode t)
+(setq show-trailing-whitespace t)
 
 ;; Scans the list in local-packages
 ;; If the package listed is not already installed, install it
@@ -100,7 +111,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(elpygen magit blacken ein skewer-mode request python-mode py-autopep8 projectile polymode markdown-mode jedi flycheck elpy better-defaults)))
+   '(markdown markdown-preview-mode elpygen ponylang-mode ## magit blacken ein skewer-mode request python-mode py-autopep8 projectile polymode markdown-mode jedi flycheck elpy better-defaults)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

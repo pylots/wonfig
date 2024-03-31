@@ -22,8 +22,6 @@
     py-autopep8                     ;; Run autopep8 on save
     blacken                         ;; Black formatting on save
     magit                           ;; Git integration
-    ponylang-mode
-    solarized-theme
     )
   )
 
@@ -102,7 +100,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(elpygen ponylang-mode ## magit blacken ein skewer-mode request python-mode py-autopep8 projectile polymode markdown-mode jedi flycheck elpy better-defaults)))
+   '(elpygen magit blacken ein skewer-mode request python-mode py-autopep8 projectile polymode markdown-mode jedi flycheck elpy better-defaults)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

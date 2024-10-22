@@ -10,7 +10,7 @@ won () {
         deactivate
         unset PRODIR
         echo "]0;"
-        PS1="\w >>"
+        PS1="(\h) \w >>"
         cd
         return
     fi

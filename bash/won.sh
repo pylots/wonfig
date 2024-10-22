@@ -3,7 +3,7 @@ e () {
 }
 
 export PROMPT_DIRTRIM=2
-export PS1="\w >>"
+export PS1="(\h) \w >>"
 won () {
     if [ "$1" = "" ]
     then
